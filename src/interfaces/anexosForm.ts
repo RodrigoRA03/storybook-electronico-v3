@@ -64,6 +64,23 @@ export interface TextAreaNotasProps {
   rules?: object;
 }
 
+// export interface InputTextCveNumero {
+
+  /**
+   * parametro que se asiganara al nombre del text <InputText name="Nombre que asignaste">
+   */
+  // name?: string;
+  /**
+   * parametro que se asiganará a la etiqueta <label></label>
+   */
+  // label?: string;
+  /**
+   * parametro que deshabilita solo el inputText
+   */
+  //  disabled?: boolean
+
+// }
+
 export type Inputs = {
   sintesis: string;
   notas: string;

@@ -45,10 +45,3 @@ export const FormDropdown = ({ handleChangeDropdown, ...props }) => {
   );
 };
 
-FormDropdown.propTypes = {
-  name: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  options: PropTypes.array.isRequired,
-  optionLabel: PropTypes.string,
-  rules: PropTypes.object,
-};

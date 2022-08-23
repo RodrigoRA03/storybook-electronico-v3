@@ -44,8 +44,3 @@ export const FormInputText = ({ label, ...props }) => {
   );
 };
 
-FormInputText.prototype = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  className: PropTypes.string,
-};
