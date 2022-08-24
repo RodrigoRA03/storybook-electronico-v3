@@ -1,3 +1,4 @@
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 import { InputText } from "primereact/inputtext";
 import { useContext, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -11,9 +12,7 @@ export const CVEAnio = ({
   disabled = false,
   ...props
 }) => {
-  const { anio, handleChangeProps } = useContext(
-    busquedaCarpetaJudicialContext
-  );
+  const { anio, isDisabled } = useContext(busquedaCarpetaJudicialContext);
   const { setValue } = useFormContext();
 
   useEffect(() => {
@@ -23,6 +22,11 @@ export const CVEAnio = ({
   }, [anio]);
 
   return (
-      <FormInputText label={label} name={name} disabled={disabled} {...props} />
+    <FormInputText
+      label={label}
+      name={name}
+      disabled={isDisabled || disabled}
+      {...props}
+    />
   );
 };

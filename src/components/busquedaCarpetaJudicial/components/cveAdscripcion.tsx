@@ -4,23 +4,29 @@ import { FormDropdown } from "../../ui/formDropdown";
 import { busquedaCarpetaJudicialContext } from "../busquedaCarpetaJudicialContext";
 
 export const CVEAdscripcion = () => {
-    const { lstAdscripciones, adscripcion, handleChangeProps } = useContext( busquedaCarpetaJudicialContext );
+    const {
+      lstAdscripciones,
+      adscripcion,
+      isDisabled,
+      getAdscripcionSelected,
+    } = useContext(busquedaCarpetaJudicialContext);
     const { setValue } = useFormContext();
-    
-    useEffect(() => {
-        if(adscripcion){
-            setValue("cveAdscripcion", adscripcion, {shouldDirty: true});
-        }
-    }, [adscripcion])
 
-  return (
-    <FormDropdown
+    useEffect(() => {
+      if (adscripcion) {
+        setValue("cveAdscripcion", adscripcion, { shouldDirty: true });
+      }
+    }, [adscripcion]);
+
+    return (
+      <FormDropdown
         name="cveAdscripcion"
         options={lstAdscripciones}
         optionLabel="DesJuz"
         optionValue="IdJuzgado"
         label="Juzgado"
-        handleChangeDropdown={handleChangeProps}
-    />
-  );
+        handleChangeDropdown={getAdscripcionSelected}
+        disabled={isDisabled}
+      />
+    );
 };

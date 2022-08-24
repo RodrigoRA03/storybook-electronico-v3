@@ -18,12 +18,19 @@ export const BusquedaCarpetaJudicial = ({
   lstInstancias,
   lstMaterias,
   lstTipoNumeros,
-  handleChangeProps,
+  isDisabled = false,
+  getAdscripcionSelected,
+  getInstanciaSelected,
+  getMateriaSelected,
+  getTipoNumeroSelected,
+  getDataForm,
 }: busquedaCarpetaJudicialInterface) => {
   const methods = useForm<Inputs>();
   const { Provider } = busquedaCarpetaJudicialContext;
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {};
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    getDataForm && getDataForm(data);
+  };
 
   return (
     <Provider
@@ -38,7 +45,11 @@ export const BusquedaCarpetaJudicial = ({
         lstInstancias,
         lstMaterias,
         lstTipoNumeros,
-        handleChangeProps
+        isDisabled,
+        getAdscripcionSelected,
+        getInstanciaSelected,
+        getMateriaSelected,
+        getTipoNumeroSelected,
       }}
     >
       <FormProvider {...methods}>

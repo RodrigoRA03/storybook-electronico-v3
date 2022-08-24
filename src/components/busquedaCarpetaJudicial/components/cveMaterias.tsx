@@ -4,23 +4,26 @@ import { FormDropdown } from "../../ui/formDropdown";
 import { busquedaCarpetaJudicialContext } from "../busquedaCarpetaJudicialContext";
 
 export const CVEMateria = () => {
-    const { lstMaterias, materia, handleChangeProps } = useContext( busquedaCarpetaJudicialContext );
+    const { lstMaterias, materia, isDisabled, getMateriaSelected } = useContext(
+      busquedaCarpetaJudicialContext
+    );
     const { setValue } = useFormContext();
-    
-    useEffect(() => {
-        if(materia){
-            setValue("cveMateria", materia, {shouldDirty: true});
-        }
-    }, [materia])
 
-  return (
-    <FormDropdown
+    useEffect(() => {
+      if (materia) {
+        setValue("cveMateria", materia, { shouldDirty: true });
+      }
+    }, [materia]);
+
+    return (
+      <FormDropdown
         name="cveMateria"
         options={lstMaterias}
         optionLabel="descMateria"
         optionValue="cveMateria"
         label="Materias"
-        handleChangeDropdown={handleChangeProps}
-    />
-  );
+        handleChangeDropdown={getMateriaSelected}
+        disabled={isDisabled}
+      />
+    );
 };

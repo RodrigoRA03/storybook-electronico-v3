@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { CargaArchivos } from "../../../components/cargaArchivos/cargaArchivos";
 
 export default {
-  title: "Componentes Generales/Carga de Archivos",
+  title: "Componentes Generales/Carga de Archivos/carga de archivos",
   component: CargaArchivos,
 } as ComponentMeta<typeof CargaArchivos>;
 

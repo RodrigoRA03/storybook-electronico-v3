@@ -46,12 +46,6 @@ const template: ComponentStory<typeof BusquedaCarpetaComponent2> = (args) => {
 
 export const FormBusquedaCarpetaJudicial = template.bind({});
 FormBusquedaCarpetaJudicial.args = {
-  /* adscripcion: "",
-  instancia: "",
-  materia: "",
-  tipoNumero: "",
-  numero: "",
-  anio: "", */
   lstAdscripciones: [
     { IdJuzgado: 1, DesJuz: "JUZGADO PRUEBA" },
     { IdJuzgado: 2, DesJuz: "JUZGADO TEST" },
@@ -68,7 +62,19 @@ FormBusquedaCarpetaJudicial.args = {
     { cveTipoNumero: 1, descTipoNumeroObtenido: "JUZGADO PRUEBA" },
     { cveTipoNumero: 2, descTipoNumeroObtenido: "JUZGADO TEST" },
   ],
-  handleChangeProps(value) {
+  getAdscripcionSelected(value) {
     alert(value);
+  },
+  getInstanciaSelected(value) {
+    alert(value);
+  },
+  getMateriaSelected(value) {
+    alert(value);
+  },
+  getTipoNumeroSelected(value) {
+    alert(value);
+  },
+  getDataForm(data) {
+    alert(JSON.stringify(data, null, 2));
   },
 };
